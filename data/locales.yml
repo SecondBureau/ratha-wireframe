@@ -1,0 +1,34 @@
+en:
+  menu:
+    - label: vehicles
+      link: vehicles.html
+      children:
+        - label: Senova
+          link: vehicles.html?vehicle=senova
+        - label: ES
+          link: toto.html
+        - label: Yusheng
+          link: zoz.html
+    - label: services
+      link: service.html
+      children:
+        -label: SAV
+        -link: sav.html
+
+
+zh:
+  menu:
+    - label: ve
+      link: vehicles.html
+      children:
+        - label: Senova
+          link: vehicles.html
+        - label: ES
+          link: toto.html
+        - label: Yusheng
+          link: zoz.html
+    - label: services
+      link: service.html
+      children:
+        -label: SAV
+        -link: sav.html
