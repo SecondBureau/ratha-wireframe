@@ -1,6 +1,81 @@
+
 @import "bootstrap";
 
 body {
  padding-top: 60px;
- padding-bottom: 40px;
+ padding-bottom: 0px;
+ color: #5a5a5a;
 }
+
+
+
+.navbar .navbar-inner {
+  padding-top: 30px;
+  background:#d4d4d4;
+  border: 0;
+  -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+     -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+          box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+.navbar-sub {
+ position:absolute;
+ width:100%;
+ background: #6d6d6d;
+ height: 30px;
+ box-shadow: 0px 2px 5px black;
+ z-index: 12;
+ border: 0px;
+}
+
+.brand {
+  position:absolute;
+  top:0px;
+  left: 50px;
+  height: 120px;
+  width:100px;
+  background: white;
+  box-shadow: 1px 2px 4px #888888;
+  z-index: 9999;
+}
+
+.home_image {
+  margin-top:40px;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
+  background: #5a5a5a;
+}
+
+.prefooter {
+  position:relative;
+  z-index: 100;
+  width:100%;
+  box-shadow: 0px 2px 5px black;
+}
+
+#footer {
+  background: grey;
+  font-size: 12px;
+  h3 {
+    font-size: 12px;
+    color: white;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0px;
+  padding:0px;
+    li {
+    margin: 0px;
+    padding:0px;
+    }
+  }
+  a {
+    color: #dfdfdf;
+  }
+  
+  .copyright {
+  margin-top:20px;
+  }
+}
+

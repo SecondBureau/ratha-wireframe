@@ -38,14 +38,9 @@
 
     = partial "menu"
 
-    .container
-      = yield
+    = yield
     
-
-      %hr
-
-      %footer
-        %p &copy; BAIC 2013
+    = partial "footer"
 
     -# Javascripts
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js'
