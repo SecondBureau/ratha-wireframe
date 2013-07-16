@@ -1,0 +1,21 @@
+---
+title: Senova
+body_class: index
+---
+
+
+.hero-unit
+  %h1 Senova
+  %p= lorem.paragraph
+  =image_tag lorem.image('600x200')
+
+- %w[infos indicators characteristics dealers].each do |p|
+  %a{:name => p}
+  .row
+    .span12
+      %p
+  .row
+    .span12
+      %h1= I18n.t("nav.vehicles.senova.#{p}")
+      %p=image_tag lorem.image('800x400')
+      %p= lorem.paragraphs(5)

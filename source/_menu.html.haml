@@ -5,20 +5,35 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'BAIC', 'http://middlemanapp.com/', title: 'Read Online Documentation', class: 'brand'
+      = link_to 'BAIC', '/', title: 'BAIC MOTORS', class: 'brand'
       .nav-collapse.collapse
         %ul.nav
-          - data.locales[locale].menu.each do |f|
-            %li= link_to f.label, f.link, :query => { :locale => locale }
-          %li.dropdown
-            =link_to '#', :class => "dropdown-toggle", :"data-toggle" => "dropdown" do
-              Dropdown
-              %b.caret
-            %ul.dropdown-menu
-              %li= link_to 'About', '#'
-              %li= link_to 'About', '#'
-              %li= link_to 'About', '#'
-              %li.divider
-              %li.nav-header 'NAv header'
-              %li= link_to 'About', '#'
-              %li= link_to 'About', '#'
+          - data.navigation.each do |primary|
+            - if primary.is_a?(String)
+              %li= link_to I18n.t("nav.#{primary}"), "/#{I18n.locale}/#{primary}.html"
+            - else
+              - primary.each do |label1, children|
+                %li.dropdown
+                  =link_to "/#{I18n.locale}/#{label1}.html", :class => "dropdown-toggle", :"data-toggle" => "dropdown" do
+                    = I18n.t("nav.#{label1}.label")
+                    %b.caret
+                  %ul.dropdown-menu
+                    - children.each do |secondary|
+                      - if secondary.is_a?(String)
+                        %li= link_to I18n.t("nav.#{label1}.#{secondary}"), "/#{I18n.locale}/#{label1}_#{secondary}.html"
+                      - else
+                        - secondary.each do |label2, grandchildren|
+                          %li.divider
+                          %li.nav-header= I18n.t("nav.#{label1}.#{label2}.label")
+                          - grandchildren.each do |label3|
+                            %li= link_to I18n.t("nav.#{label1}.#{label2}.#{label3}"), "/#{I18n.locale}/#{label1}_#{label2}.html", :fragment => label3 
+      
+        .pull-right
+          %ul.nav
+            %li.dropdown
+              =link_to '#', :class => "dropdown-toggle", :"data-toggle" => "dropdown" do
+                Language
+                %b.caret
+              %ul.dropdown-menu
+                %li= link_to 'English', '/en'
+                %li= link_to '中文', '/zh'

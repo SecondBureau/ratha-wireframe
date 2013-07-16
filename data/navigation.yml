@@ -1,0 +1,27 @@
+- vehicles:
+  - senova:
+    - infos
+    - indicators
+    - characteristics
+    - dealers
+  - others:
+    - es
+    - yusheng
+    - b40
+    - weiwang
+- services:
+  - customers
+  - finances
+- dealers:
+  - dealer1
+  - dealer2
+  - country1
+- news_events
+- technologies:
+  - senova
+  - energy
+- aboutus:
+  - history
+  - orgchart
+  - recruitment
+- contactus

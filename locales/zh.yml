@@ -1,0 +1,36 @@
+zh:
+  nav:
+    vehicles:
+      label: 车型
+      senova:
+        label: 绅宝
+        infos: Informations
+        indicators: Indicators
+        characteristics: Characteristics
+        dealers: Dearlers
+      others:
+        label: Others
+        es: ES
+        yusheng: 域 胜
+        b40: B40
+        weiwang: 威威
+    services:
+      label: 服务
+      customers: 售 前 咨 询 
+      finances: 金 融 服 务
+    dealers:
+      label: 销 售 网 络
+      dealer1: Dealer1
+      dealer2: Dealer2
+      country1: Country1
+    news_events: 咨讯
+    technologies:
+      label: 科技
+      senova: Senova
+      energy: Energy
+    aboutus:
+      label: 关于北汽
+      history: 品 牌 历 史
+      orgchart: 组 织 架 构
+      recruitment: Recruitment
+    contactus: Contact Us

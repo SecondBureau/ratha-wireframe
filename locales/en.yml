@@ -1,0 +1,36 @@
+en:
+  nav:
+    vehicles:
+      label: Vehicles
+      senova:
+        label: Senova
+        infos: Informations
+        indicators: Indicators
+        characteristics: Characteristics
+        dealers: Dearlers
+      others:
+        label: Others
+        es: ES
+        yusheng: Yusheng
+        b40: B40
+        weiwang: Weiwang
+    services:
+      label: Services
+      customers: Customers 
+      finances: Finances
+    dealers:
+      label: Dealers
+      dealer1: Dealer1
+      dealer2: Dealer2
+      country1: Country1
+    news_events: "News & Events"
+    technologies:
+      label: Technologies
+      senova: Senova
+      energy: Energy
+    aboutus:
+      label: About Us
+      history: History
+      orgchart: Orgchart
+      recruitment: Recruitment
+    contactus: Contact Us

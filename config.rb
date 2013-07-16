@@ -33,10 +33,14 @@
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+ activate :automatic_image_sizes
 
 # Reload the browser automatically whenever files change
  activate :livereload
+ 
+# Enable i18n
+ activate :i18n, :path => "/:locale/", :templates_dir => "localizable", :langs => [:en, :zh], :mount_at_root => false
+
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -71,7 +75,8 @@ configure :build do
 
   # Use relative URLs
   # activate :relative_assets
-
+  
+  
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
