@@ -16,3 +16,4 @@ platforms :mri_18 do
 end
 
 gem 'bootstrap-sass'
+gem 'thin'
