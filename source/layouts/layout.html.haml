@@ -8,7 +8,7 @@
 %html{lang: 'en', class: 'no-js'}
   /<![endif]
   %head
-    %title #{data.page.title || "BAIC Motors"}
+    %title= data.page.title || "BAIC Motors"
     %meta(http-equiv="content-type" content="text/html" charset="utf-8")
     %meta(http-equiv="x-ua-compatible" content="ie=edge,chrome=1")
     %meta(name="description" content="")
@@ -34,13 +34,36 @@
     -# Stylesheets
     = stylesheet_link_tag 'application'
   
-  %body{class: current_page.data.body_class || 'page'}
+  %body
+  
+    .container-fluid
+      .row-fluid
+        .span3.bs-docs-sidebar{:"data-spy" => "affix"}
+          = partial "sitemap"
+          .preview
+            = preview_image_tag
+      .row-fluid
+        .span3
+        .span9
+          #body{class: current_page.data.body_class || 'page'}
+            #browser
+              
+              
+              .header
+                .header-left
+                .header-right
+                .title
+                  = data.page.title || "BAIC Motors"
+                .url
+                  ="http://baic.com/#{current_page.path}"
+              .main{:style => 'position:relative; padding: 0 6px 0 5px'}
+                .left
+                .right
+                = yield
+              .footer
+                .footer-left
+                .footer-right
 
-    = partial "menu"
-
-    = yield
-    
-    = partial "footer"
 
     -# Javascripts
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js'

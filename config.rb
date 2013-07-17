@@ -55,6 +55,11 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
+%w[services_customers services_finances  services_tuning technologies_senova technologies_energy aboutus_history aboutus_orgchart aboutus_recruitment].each do |t|
+  proxy "/fr/pages/#{t}.html", "/localizable/pages/standard.html", :locals => { :page_name => t }, :ignore => true
+  proxy "/en/pages/#{t}.html", "/localizable/pages/standard.html", :locals => { :page_name => t }, :ignore => true
+end
+
 # Build-specific configuration
 configure :build do
 

@@ -1,5 +1,6 @@
 zh:
   nav:
+    home: Home
     vehicles:
       label: 车型
       senova:
@@ -18,6 +19,7 @@ zh:
       label: 服务
       customers: 售 前 咨 询 
       finances: 金 融 服 务
+      tuning: Tuning
     dealers:
       label: 销 售 网 络
       dealer1: Dealer1
@@ -34,3 +36,9 @@ zh:
       orgchart: 组 织 架 构
       recruitment: Recruitment
     contactus: Contact Us
+  layouts:
+    colors:
+      home: warning
+      vehicle: success
+      standard: standard
+      news: info

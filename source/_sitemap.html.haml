@@ -1,0 +1,47 @@
+.well.sidebar-nav{:style => 'margin-top:20px'}
+  %ul.nav.nav-list
+    %li.nav-header
+      - layout = 'home'
+      %span
+        = link_to I18n.t("nav.home"), "/#{I18n.locale}/pages/home.html"
+        %span.badge{:class => "badge-#{I18n.t("layouts.colors.#{layout}")}"} &nbsp;
+        
+    - data.navigation.each do |primary|
+      - if primary.is_a?(String)
+        - primary, layout = parse_nav(primary)
+        %li
+          %span
+            = link_to I18n.t("nav.#{primary}"), "/#{I18n.locale}/pages/#{primary}.html"
+            %span.badge{:class => "badge-#{I18n.t("layouts.colors.#{layout}")}"} &nbsp;
+            
+      - else
+        - primary.each do |label1, children|
+          %li
+            - label1, layout = parse_nav(label1) 
+            %span
+              =link_to  I18n.t("nav.#{label1}.label"), "/#{I18n.locale}/pages/#{label1}.html"
+              %span.badge{:class => "badge-#{I18n.t("layouts.colors.#{layout}")}"} &nbsp;
+              
+            %ul
+              - children.each do |secondary|
+                - if secondary.is_a?(String)
+                  - secondary, layout = parse_nav(secondary)
+                  %li
+                    %span
+                      = link_to I18n.t("nav.#{label1}.#{secondary}"), "/#{I18n.locale}/pages/#{label1}_#{secondary}.html"
+                      %span.badge{:class => "badge-#{I18n.t("layouts.colors.#{layout}")}"} &nbsp;
+                      
+                - else
+                  - secondary.each do |label2, grandchildren|
+                    - label2, layout = parse_nav(label2)  
+                    %li
+                      %span
+                        = link_to I18n.t("nav.#{label1}.#{label2}.label"), "/#{I18n.locale}/pages/#{label1}_#{label2}.html"
+                        %span.badge{:class => "badge-#{I18n.t("layouts.colors.#{layout}")}"} &nbsp;
+                      %ul
+                        - grandchildren.each do |label3|
+                          - label3, layout = parse_nav(label3) 
+                          %li
+                            %span 
+                              = link_to I18n.t("nav.#{label1}.#{label2}.#{label3}"), "/#{I18n.locale}/pages/#{label1}_#{label2}.html", :fragment => label3
+                              %span.badge{:class => "badge-#{I18n.t("layouts.colors.#{layout}")}"} &nbsp;

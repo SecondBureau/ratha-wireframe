@@ -1,27 +1,28 @@
-- vehicles:
-  - senova:
-    - infos
-    - indicators
-    - characteristics
-    - dealers
-  - others:
-    - es
-    - yusheng
-    - b40
-    - weiwang
-- services:
-  - customers
-  - finances
-- dealers:
-  - dealer1
-  - dealer2
-  - country1
-- news_events
-- technologies:
-  - senova
-  - energy
-- aboutus:
-  - history
-  - orgchart
-  - recruitment
-- contactus
+- vehicles[vehicle]:
+  - senova[vehicle]:
+    - infos[vehicle]
+    - indicators[vehicle]
+    - characteristics[vehicle]
+    - dealers[vehicle]
+  - others[vehicle]:
+    - es[vehicle]
+    - yusheng[vehicle]
+    - b40[vehicle]
+    - weiwang[vehicle]
+- services[standard]:
+  - customers[standard]
+  - finances[standard]
+  - tuning[standard]
+- dealers[standard]:
+  - dealer1[standard]
+  - dealer2[standard]
+  - country1[standard]
+- news_events[news]
+- technologies[standard]:
+  - senova[standard]
+  - energy[standard]
+- aboutus[standard]:
+  - history[standard]
+  - orgchart[standard]
+  - recruitment[standard]
+- contactus[standard]

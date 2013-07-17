@@ -1,5 +1,6 @@
 en:
   nav:
+    home: Home
     vehicles:
       label: Vehicles
       senova:
@@ -7,7 +8,7 @@ en:
         infos: Informations
         indicators: Indicators
         characteristics: Characteristics
-        dealers: Dearlers
+        dealers: Dealers
       others:
         label: Others
         es: ES
@@ -18,6 +19,7 @@ en:
       label: Services
       customers: Customers 
       finances: Finances
+      tuning: Tuning
     dealers:
       label: Dealers
       dealer1: Dealer1
@@ -34,3 +36,9 @@ en:
       orgchart: Orgchart
       recruitment: Recruitment
     contactus: Contact Us
+  layouts:
+    colors:
+      home: warning
+      vehicle: success
+      standard: standard
+      news: info

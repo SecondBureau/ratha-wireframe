@@ -1,0 +1,29 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      .nav-collapse.collapse
+        %ul.nav
+          - data.navigation.each do |primary|
+            - if primary.is_a?(String)
+              - primary, layout = parse_nav(primary)
+              %li= link_to I18n.t("nav.#{primary}"), "/#{I18n.locale}/#{primary}.html"
+            - else
+              - primary.each do |label1, children|
+                - label1, layout = parse_nav(label1) 
+                %li.dropdown
+                  =link_to "/#{I18n.locale}/pages/#{label1}.html", :class => "dropdown-toggle", :"data-toggle" => "dropdown" do
+                    = I18n.t("nav.#{label1}.label")
+                    %b.caret
+                  %ul.dropdown-menu
+                    - children.each do |secondary|
+                      - if secondary.is_a?(String)
+                        - secondary, layout = parse_nav(secondary)
+                        %li= link_to I18n.t("nav.#{label1}.#{secondary}"), "/#{I18n.locale}/pages/#{label1}_#{secondary}.html"
+                      - else
+                        - secondary.each do |label2, grandchildren|
+                          - label2, layout = parse_nav(label2) 
+                          %li.divider
+                          %li.nav-header= I18n.t("nav.#{label1}.#{label2}.label")
+                          - grandchildren.each do |label3|
+                            - label3, layout = parse_nav(label3) 
+                            %li= link_to I18n.t("nav.#{label1}.#{label2}.#{label3}"), "/#{I18n.locale}/pages/#{label1}_#{label2}.html", :fragment => label3 
