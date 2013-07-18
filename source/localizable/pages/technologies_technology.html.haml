@@ -1,0 +1,16 @@
+---
+title: Technology Template
+layout: standard
+mockup: technology
+---
+
+.hero-unit
+  %h1= technology_name.humanize
+  %p= "This is a standard template page to describe #{technology_name.humanize}."
+    
+.row-fluid
+  .span12
+    - %w[senova energy].each do |p|
+      %a{:name => p}
+      %h2= p
+      %hr

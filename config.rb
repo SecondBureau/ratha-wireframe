@@ -55,9 +55,43 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-%w[services_customers services_finances  services_tuning technologies_senova technologies_energy aboutus_history aboutus_orgchart aboutus_recruitment].each do |t|
-  proxy "/fr/pages/#{t}.html", "/localizable/pages/standard.html", :locals => { :page_name => t }, :ignore => true
-  proxy "/en/pages/#{t}.html", "/localizable/pages/standard.html", :locals => { :page_name => t }, :ignore => true
+%w[en zh].each do |lang|
+
+  %w[senova es yusheng b40 weiwang].each do |m|
+    proxy "/#{lang}/pages/vehicles_#{m}.html",  "/localizable/pages/vehicles_model.html",:locals => { :vehicle_model => m }, :ignore => true do
+      ::I18n.locale   = lang
+      @lang           = lang 
+    end
+  end
+  
+  %w[customers finances tuning].each do |s|
+    proxy "/#{lang}/pages/services_#{s}.html",  "/localizable/pages/services_service.html", :locals => { :service_name => s }, :ignore => true do
+      ::I18n.locale   = lang
+      @lang           = lang
+    end
+  end
+  
+  %w[dealer1 dealer2].each do |s|
+    proxy "/#{lang}/pages/dealers_#{s}.html", "/localizable/pages/dealers_dealer.html", :locals => { :dealer_name => s }, :ignore => true do
+      ::I18n.locale   = lang
+      @lang           = lang
+    end
+  end
+
+  %w[senova energy].each do |s|
+    proxy "/#{lang}/pages/technologies_#{s}.html", "/localizable/pages/technologies_technology.html", :locals => { :technology_name => s }, :ignore => true do
+       ::I18n.locale   = lang
+        @lang           = lang
+    end
+  end
+  
+  %w[history orgchart recruitment].each do |s|
+    proxy "/#{lang}/pages/aboutus_#{s}.html", "/localizable/pages/aboutus.html", :locals => { :aboutus_name => s }, :ignore => false do
+       ::I18n.locale   = lang
+        @lang           = lang
+    end
+  end
+
 end
 
 # Build-specific configuration

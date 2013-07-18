@@ -1,0 +1,16 @@
+---
+title: About US Template
+layout: standard
+mockup: aboutus
+---
+
+.hero-unit
+  %h1= "aboutus_name"
+  %p= "This is a standard template page to describe #{"aboutus_name"} model."
+    
+.row-fluid
+  .span12
+    - %w[aboutus history orgchart recruitment].each do |p|
+      %a{:name => p}
+      %h2= p
+      %hr

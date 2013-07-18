@@ -1,0 +1,16 @@
+---
+title: Vehicle Model Template
+layout: vehicle
+mockup: vehicle
+---
+
+.hero-unit
+  %h1= vehicle_model.humanize
+  %p= "This is a vehicle template page to describe #{vehicle_model.humanize} model."
+    
+.row-fluid
+  .span12
+    - %w[infos indicators characteristics dealers].each do |p|
+      %a{:name => p}
+      %h2= p
+      %hr

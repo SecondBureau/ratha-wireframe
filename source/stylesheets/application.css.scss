@@ -1,7 +1,14 @@
 
+@import "colors";
 @import "bootstrap";
 @import "browser";
 @import "page";
+@import "sitemap";
+@import "lib/bootstrap.lightbox";
+
+body {
+  padding-top:20px;
+}
 
 #body {
   background: grey;

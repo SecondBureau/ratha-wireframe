@@ -1,0 +1,16 @@
+---
+title: Service Template
+layout: standard
+mockup: service
+---
+
+.hero-unit
+  %h1= service_name.humanize
+  %p= "This is a vehicle template page to describe #{service_name.humanize} model."
+    
+.row-fluid
+  .span12
+    - %w[customers finances tuning].each do |p|
+      %a{:name => p}
+      %h2= p
+      %hr

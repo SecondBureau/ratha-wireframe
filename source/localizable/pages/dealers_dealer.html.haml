@@ -1,0 +1,16 @@
+---
+title: Dealer Template
+layout: dealers
+mockup: dealer
+---
+
+.hero-unit
+  %h1= dealer_name
+  %p= "This is a dealer template page to describe #{dealer_name} service."
+    
+.row-fluid
+  .span12
+    - %w[a b c].each do |p|
+      %a{:name => p}
+      %h2= p
+      %hr

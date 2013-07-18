@@ -1,33 +1,30 @@
 ---
 title: Welcome to BAIC
 layout: home
-body_class: home
-preview: home
+mockup: home
 ---      
 
-.home_image
-  = image_tag 'home.jpg'
+.hero-unit
+  %h1 Home page
+  %p This is the main landing page. It should display an overview of the brand and services offered on this website.
   
-.container
+.row-fluid
+  .span12
+    %h2 Contents
 
-  .hero-unit
-    %h1= lorem.words 3
-    %p= lorem.words 50
-    
+.row-fluid
+  .span4
+    %h3 Topics
+    %ul
+      %li Promotion of the month
+        
+  .span4
+    %h3 Previews & Links
+    %ul
+      %li Top3 News
+  .span4
+    %h3 Images & Videos
+    %ul
+      %li Slideshow
+      %li News
 
-
-  .row
-    .span4
-      %p= image_tag lorem.image('300x200')
-      %h2=lorem.word.humanize
-      %p=lorem.paragraph
-
-    .span4
-      %p= image_tag lorem.image('300x200')
-      %h2=lorem.word.humanize
-      %p=lorem.paragraph
-
-    .span4
-      %p= image_tag lorem.image('300x200')
-      %h2=lorem.word.humanize
-      %p=lorem.paragraph

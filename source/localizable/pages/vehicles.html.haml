@@ -1,12 +1,26 @@
 ---
 title: All Vehicles
-body_class: vehicle
-layout: vehicle
-preview: vehicle
+layout: vehicles
+mockup: vehicles
 ---
 
-.container
-
-  .hero-unit
-    %h1 Our models
-    %p= lorem.words 50
+.hero-unit
+  %h1 Our models
+  %p This page present all current models.
+      
+  .row-fluid
+    .span4
+      = image_tag lorem.image('300x200')
+      %h3 Berline
+      
+    .span4
+      = image_tag lorem.image('300x200')
+      %h3 Family
+      
+    .span4
+      = image_tag lorem.image('300x200')
+      %h3 Sport
+      
+.row-fluid
+  .span12
+    %h2 Contents

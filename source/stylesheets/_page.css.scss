@@ -1,23 +1,46 @@
 
-
-#body.home {
-  background: #f89406;
+.layout-home {
+  background: $layout1 !important;
 }
 
-#body.vehicle {
-  background: #468847;
+.layout-standard {
+  background: $layout2 !important;
 }
 
-
-#body.standard {
-  background: #999999;
+.layout-vehicles {
+  background: $layout3 !important;
 }
 
-
-#body.page {
-  background: #d5d5d5;
+.layout-vehicle {
+  background: $layout3 !important;
 }
 
-#body.news {
-  background: #d5d5d5;
+.layout-news {
+  background: $layout4 !important;
+}
+
+.layout-dealers {
+  background: $layout5 !important;
+}
+
+.layout-layout7 {
+  background: $layout0 !important;
+}
+
+.layout-layout8 {
+  background: $layout0 !important;
+}
+
+.layout-layout9 {
+  background: $layout0 !important;
+}
+
+.layout-default {
+  background: $layout9 !important;
+}
+
+footer {
+  background: #fff;
+  opacity:0.4;
+  filter:alpha(opacity=40);
 }

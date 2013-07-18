@@ -1,0 +1,17 @@
+%ul
+  - nodes.each do |key, node|
+    - label     = (node.nil? || node['label'].nil?) ? key : node['label']
+    - node_path = parents + [label]
+    - children  = node['children'] unless node.nil?
+    - fragments = node['fragments'] unless node.nil?
+    - layout    = (node.nil? || node['layout'].nil?) ? layout :  node['layout']
+    %li
+      %span{:class => "layout-#{layout}"}
+        = link_to I18n.t("nav.#{node_path.join('.')}#{children.nil? && fragments.nil? ? '' : '.label'}"), "/#{I18n.locale}/pages/#{node_path.join('_')}.html"
+        - if false && node && node['fragments']
+          |
+          - node['fragments'].each do |fragment|
+            = link_to I18n.t("nav.#{node_path.join('.')}.fragments.#{fragment}"), "/#{I18n.locale}/pages/#{node_path.join('_')}.html##{fragment}"
+            |
+      - if children
+        = partial :sitemap_node, :locals => {:nodes => children, :parents => node_path, :layout => layout  }

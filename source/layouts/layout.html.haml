@@ -33,22 +33,25 @@
     
     -# Stylesheets
     = stylesheet_link_tag 'application'
+    
+    -# Javascripts
+    = javascript_include_tag 'application'
   
   %body
   
     .container-fluid
       .row-fluid
-        .span3.bs-docs-sidebar{:"data-spy" => "affix"}
-          = partial "sitemap"
-          .preview
-            = preview_image_tag
+        .span4.bs-docs-sidebar{:"data-spy" => "affix"}
+          .span7
+            = partial "sitemap"
+          .span1
+          .span4
+            = partial "previews"
       .row-fluid
-        .span3
-        .span9
-          #body{class: current_page.data.body_class || 'page'}
+        .span4
+        .span8
+          #body{class: "layout-#{current_page.data.layout}" || 'layout-default'}
             #browser
-              
-              
               .header
                 .header-left
                 .header-right
@@ -65,7 +68,4 @@
                 .footer-right
 
 
-    -# Javascripts
-    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js'
-    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js'
-    = javascript_include_tag 'application'
+    

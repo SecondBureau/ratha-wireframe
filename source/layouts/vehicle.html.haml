@@ -1,2 +1,10 @@
 - wrap_layout :layout do
-  = yield
+  %br
+  .container-fluid
+    .row-fluid
+      = yield
+    .row-fluid
+      %footer
+        .container-fluid
+          = partial "footer"
+      %br

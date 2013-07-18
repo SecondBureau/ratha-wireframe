@@ -5,16 +5,15 @@ en:
       label: Vehicles
       senova:
         label: Senova
-        infos: Informations
-        indicators: Indicators
-        characteristics: Characteristics
-        dealers: Dealers
-      others:
-        label: Others
-        es: ES
-        yusheng: Yusheng
-        b40: B40
-        weiwang: Weiwang
+        fragments:
+          infos: Informations
+          indicators: Indicators
+          characteristics: Characteristics
+          dealers: Dealers
+      es: ES
+      yusheng: Yusheng
+      b40: B40
+      weiwang: Weiwang
     services:
       label: Services
       customers: Customers 
@@ -36,9 +35,3 @@ en:
       orgchart: Orgchart
       recruitment: Recruitment
     contactus: Contact Us
-  layouts:
-    colors:
-      home: warning
-      vehicle: success
-      standard: standard
-      news: info
